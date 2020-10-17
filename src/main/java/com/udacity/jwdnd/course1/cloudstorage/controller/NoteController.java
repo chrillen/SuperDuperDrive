@@ -6,10 +6,7 @@ import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
 import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
 
@@ -25,7 +22,7 @@ public class NoteController extends ControllerBase {
     }
 
     @GetMapping("/delete")
-    public  String deleteFile(Integer noteId, Authentication authentication, Model model) {
+    public  String deleteNote(Integer noteId, Authentication authentication, Model model) {
         if(noteId == null) {
             model.addAttribute("resultType",ResultTypes.ErrorWithMessage);
             model.addAttribute("errorMessage","noteId is missing in the call.");

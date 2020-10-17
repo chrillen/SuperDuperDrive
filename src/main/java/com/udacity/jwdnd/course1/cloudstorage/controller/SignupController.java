@@ -1,5 +1,6 @@
 package com.udacity.jwdnd.course1.cloudstorage.controller;
 
+import com.udacity.jwdnd.course1.cloudstorage.model.ResultTypes;
 import com.udacity.jwdnd.course1.cloudstorage.model.User;
 import com.udacity.jwdnd.course1.cloudstorage.services.UserService;
 import org.springframework.stereotype.Controller;
@@ -40,11 +41,14 @@ public class SignupController extends ControllerBase {
         }
 
         if (signupError == null) {
-            model.addAttribute("signupSuccess", true);
+            model.addAttribute("successMessage","Sign Up was successfull!");
+            model.addAttribute("resultType", ResultTypes.SuccessWithMessage);
         } else {
-            model.addAttribute("signupError", signupError);
+            model.addAttribute("errorMessage",signupError);
+            model.addAttribute("resultType", ResultTypes.ErrorWithMessage);
         }
 
-        return "signup";
+
+        return "result";
     }
 }

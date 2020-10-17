@@ -6,6 +6,7 @@ public final class ResultTypes {
     public static final int ErrorWithMessage = 2;
     public static final  int ErrorDuplicateExist = 3;
     public static final  int ErrorEmptyObject = 4;
+    public static final int SuccessWithMessage = 5;
 
     public static String getErrorDescription(int resultType) {
         switch (resultType) {
